@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import Header from './Header';
 import ImageGrid from './ImageGrid';
 
-import { configureStore } from '../store/index.js';
+import { configureStore } from '../store';
 
 const store = configureStore();
 

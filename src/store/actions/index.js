@@ -1,4 +1,4 @@
-import { IMAGES } from '../constants/index.js';
+import { IMAGES } from '../constants';
 
 export const loadImages = () => ({
   type: IMAGES.LOAD,

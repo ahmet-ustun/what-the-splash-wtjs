@@ -1,8 +1,8 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import { rootReducer } from './reducers/index.js';
-import { rootSaga } from './sagas/index.js';
+import { rootReducer } from './reducers';
+import { watchImagesLoad } from './sagas';
 
 export const configureStore = () => {
   const sagaMiddleware = createSagaMiddleware();
@@ -16,9 +16,7 @@ export const configureStore = () => {
     ),
   );
 
-  sagaMiddleware.run(rootSaga);
-
-  store.dispatch({ type: 'HELLO' });
+  sagaMiddleware.run(watchImagesLoad);
 
   return store;
 };
