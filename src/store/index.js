@@ -2,7 +2,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import { rootReducer } from './reducers';
-import { watchImagesLoad } from './sagas';
+import { rootSaga } from './sagas';
 
 export const configureStore = () => {
   const sagaMiddleware = createSagaMiddleware();
@@ -16,7 +16,7 @@ export const configureStore = () => {
     ),
   );
 
-  sagaMiddleware.run(watchImagesLoad);
+  sagaMiddleware.run(rootSaga);
 
   return store;
 };

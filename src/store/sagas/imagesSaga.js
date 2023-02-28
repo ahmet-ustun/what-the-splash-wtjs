@@ -2,17 +2,17 @@ import { call, put, select, takeEvery } from 'redux-saga/effects';
 
 import { fetchImages } from '../api';
 import { IMAGES } from '../constants';
-import { setImages, setError } from '../actions';
+import { setImagesData, setImagesError } from '../actions';
 
-const getPageNo = state => state.pageNo;
+export const getPageNo = state => state.pageNo;
 
-function* handleImagesLoad() {
+export function* handleImagesLoad() {
   try {
     const pageNo = yield select(getPageNo);
     const images = yield call(fetchImages, pageNo);
-    yield put(setImages(images));
+    yield put(setImagesData(images));
   } catch (error) {
-    yield put(setError(error.toString()));
+    yield put(setImagesError(error.toString()));
   }
 }
 
