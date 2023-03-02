@@ -4,7 +4,7 @@ import { IMAGES } from '../constants';
 import { fetchStats } from '../api';
 import { loadStatsData, setStatsData, setStatsError } from '../actions';
 
-function* handleStatsRequest(id) {
+export function* handleStatsRequest(id) {
   for (let i = 0; i < 3; i++) {
     try {
       yield put(loadStatsData(id));

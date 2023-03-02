@@ -1,7 +1,7 @@
 import { runSaga } from 'redux-saga';
 
-import { getPageNo, handleImagesLoad } from '../imagesSaga.js';
 import * as api from '../../api';
+import { getPageNo, handleImagesLoad } from '../imagesSaga.js';
 import { setImagesData, setImagesError } from '../../actions';
 
 test('Selector gives back the page number', () => {
@@ -12,7 +12,7 @@ test('Selector gives back the page number', () => {
   expect(result).toBe(pageNumber);
 });
 
-test('Should load images in case of success', async () => {
+test('Should load the images in case of success', async () => {
   const dispatched = [];
   const mockedImages = ['image_1', 'image_2'];
 
@@ -29,9 +29,9 @@ test('Should load images in case of success', async () => {
   expect(dispatched).toContainEqual(setImagesData(mockedImages));
 });
 
-test('Should handle errors in case of failure', async () => {
+test('Should handle the errors in case of failure', async () => {
   const dispatched = [];
-  const mockedError = "Throw an error!";
+  const mockedError = 'Throw an error!';
 
   api.fetchImages = jest.fn(() => Promise.reject(mockedError));
 
