@@ -1,6 +1,6 @@
-const URL1 = process.env.REACT_APP_UNSPLASH_URL_1;
-const URL2 = process.env.REACT_APP_UNSPLASH_URL_2;
-const KEY = process.env.REACT_APP_UNSPLASH_KEY;
+const URL1 = "https://api.unsplash.com/topics/xHxYTMHLgOc/photos";
+const URL2 = "https://api.unsplash.com/photos";
+const KEY = "MY2EIzxWnC1EHsMQfKOyjSqDB2GuMc9KEOHyqPwSrnU";
 
 export const fetchImages = async pageNo => {
   const response = await fetch(`${URL1}?client_id=${KEY}&page=${pageNo}`);
